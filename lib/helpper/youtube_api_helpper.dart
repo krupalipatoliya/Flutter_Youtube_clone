@@ -12,7 +12,7 @@ class YouTubeAPIHelper {
     dynamic search = "songs";
 
     http.Response response = await http.get(Uri.parse(
-      "https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=5&q=song&key=AIzaSyDTIN4tXvlMj1hc-A8mrghv0OUGmZDo22o"
+      "https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=10&q=song&key=AIzaSyDTIN4tXvlMj1hc-A8mrghv0OUGmZDo22o"
       ,
     ));
 
