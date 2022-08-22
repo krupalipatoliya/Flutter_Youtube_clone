@@ -25,7 +25,7 @@ class _HomePageState extends State<HomePage> {
                 (context, index) {
                   return FutureBuilder(
                     future:
-                        YouTubeAPIHelper.postAPIHelper.fetchingMultipleData(),
+                        YouTubeAPIHelper.postAPIHelper.fetchingMultipleData(search: "songs"),
                     builder: (context, snapshot) {
                       List? data = snapshot.data;
                       if (snapshot.hasData) {
@@ -81,6 +81,7 @@ class _HomePageState extends State<HomePage> {
                                         ],
                                       ),
                                     ),
+                                    const Divider(),
                                   ],
                                 ),
                               );

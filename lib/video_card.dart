@@ -27,7 +27,10 @@ class _PlayVideoState extends State<PlayVideo> {
     chewieController1 = ChewieController(
       videoPlayerController: videoPlayerController1,
       looping: false,
+      autoInitialize: true,
+
     );
+    chewieController1.autoInitialize;
   }
 
   @override
@@ -42,10 +45,10 @@ class _PlayVideoState extends State<PlayVideo> {
           icon: const Icon(Icons.arrow_back),
         ),
       ),
-      body: Container(
-        child: AspectRatio(
-          aspectRatio: 16 / 9,
-          child: Chewie(controller: chewieController1),
+      body: AspectRatio(
+        aspectRatio: 16 / 9,
+        child: Chewie(
+          controller: chewieController1,
         ),
       ),
     );
@@ -59,3 +62,13 @@ class _PlayVideoState extends State<PlayVideo> {
     chewieController1.dispose();
   }
 }
+
+//
+// (videoPlayerController1.value.isInitialized)
+// ? AspectRatio(
+// aspectRatio: 16 / 9,
+// child: Chewie(
+// controller: chewieController1,
+// ),
+// )
+// : const Center(child: CircularProgressIndicator()));

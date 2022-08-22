@@ -1,23 +1,25 @@
-import 'package:chewie/chewie.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:project_one_advance/home_screen.dart';
-import 'package:video_player/video_player.dart';
-import 'helpper/youtube_api_helpper.dart';
+import 'package:project_one_advance/search_screen.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
-void main() {
+List data = [];
+
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  final prefs = await SharedPreferences.getInstance();
+
+  data = prefs.getStringList('search') ?? [];
   runApp(
-     MaterialApp(
+    MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         brightness: Brightness.dark,
         bottomNavigationBarTheme:
-        const BottomNavigationBarThemeData(selectedItemColor: Colors.white),
+            const BottomNavigationBarThemeData(selectedItemColor: Colors.white),
       ),
       home: const HomePage(),
     ),
   );
 }
-
-
-

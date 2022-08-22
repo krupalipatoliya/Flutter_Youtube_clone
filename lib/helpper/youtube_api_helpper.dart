@@ -7,12 +7,11 @@ class YouTubeAPIHelper {
 
   static final YouTubeAPIHelper postAPIHelper = YouTubeAPIHelper._();
 
-  Future<List<dynamic>?> fetchingMultipleData() async {
+  Future<List<dynamic>?> fetchingMultipleData({required String search}) async {
 
-    dynamic search = "songs";
 
     http.Response response = await http.get(Uri.parse(
-      "https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=10&q=song&key=AIzaSyDTIN4tXvlMj1hc-A8mrghv0OUGmZDo22o"
+      "https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=20&q=$search&key=AIzaSyDS_XC-piBWMJOsOFLsXcaT1WqYHb0HB44"
       ,
     ));
 
